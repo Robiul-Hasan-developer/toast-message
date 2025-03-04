@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom JS Toast Message</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/toast.css" rel="stylesheet">
+</head>
+<body class="body p-5">
+    
+    <!-- Custom Toast Message start -->
+    <div id="toast-container"></div>
+    <!-- Custom Toast Message End -->
+
+    <div class="container">
+        <h5 class="mb-3 fw-bold">Welcome to js custom Toast message!</h5>
+        <p class="mb-3 text-slate-600">This toast message is created by <span class="fw-bold text-slate-900">Front-End Developer Md. Robiul Hasan. </span> <br> You can use this in your HTML, React.js, Next.js, Wordpress, Laravel and any other project. </p>
+        
+        <!-- =========================== Custom Toast Message Start ================================ -->
+        <div class="d-flex align-items-center gap-4 flex-wrap mt-5">
+            <button type="button" class="btn btn-success active-scale-098 px-4">Success Alert</button>
+            <button type="button" class="btn btn-warning active-scale-098 px-4">Warning Alert</button>
+            <button type="button" class="btn btn-danger active-scale-098 px-4">Danger Alert</button>
+            <button type="button" class="btn btn-info active-scale-098 px-4">Info Alert</button>
+        </div>
+        <!-- =========================== Custom Toast Message End ================================ -->
+
+        <div class="mt-5">
+            <div class="row gy-4">
+                <div class="col-md-6">
+                    <form action="#" class="form-submit bg-success bg-opacity-10 p-4 rounded-4 border">
+                        <div class="">
+                            <h4 class="pb-3">Submit this form</h4>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-medium">Name</label>
+                            <input type="text" class="form-control py-2" id="name" placeholder="Enter name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-medium">Email</label>
+                            <input type="email" class="form-control py-2" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-medium">Message</label>
+                            <textarea class="form-control py-2" id="message" placeholder="Enter message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary active-scale-098 px-3 w-100 py-2" id="submitBtn">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-column gap-3 ps-xxl-4">
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo One</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Two</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Three</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Four</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Five</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Six</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="js/slider.js"></script>
+
+
+    <script type="module">
+        import { toastMessage } from './js/toast.js';
+  
+        // ********************************* Buttons Toast Start *********************************
+        let success = document.querySelector('.btn-success');
+        let warning = document.querySelector('.btn-warning');
+        let danger = document.querySelector('.btn-danger');
+        let info = document.querySelector('.btn-info');
+
+        success.addEventListener('click', function () {
+            toastMessage("success", "Success Alert", "This is success message", 'ph-fill ph-check-circle');
+        });
+
+        warning.addEventListener('click', function () {
+            toastMessage("warning", "Warning Alert", "This is warning message.", 'ph-fill ph-warning');
+        });
+
+        danger.addEventListener('click', function () {
+            toastMessage("danger", "Danger Alert", "This is danger message.", 'ph-fill ph-warning-octagon');
+        });
+
+        info.addEventListener('click', function () {
+            toastMessage("info", "Info Alert", "This is Info message.", 'ph-fill ph-info');
+        });
+        // ********************************* Buttons Toast End *********************************
+
+
+        // ********************************* Form Submit Toast Start *********************************
+        let formSubmit = document.querySelector('.form-submit');
+        let fields = document.querySelectorAll('input');
+        let textarea = document.querySelector('textarea');
+        let submitBtn = formSubmit.querySelector('#submitBtn');
+
+
+        if(formSubmit && fields) {
+            formSubmit.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                fields.forEach(field => {
+                    field.value = "";
+                });
+                if(textarea) {
+                    textarea.value = "";
+                }
+                submitBtn.innerHTML = "Submitting...";
+                setTimeout(() => {
+                    submitBtn.innerHTML = "Submit";
+                }, 500);
+                toastMessage("success", "Success", "Form submitted successfully!", 'ph-fill ph-check-circle');
+            });
+        }
+        // ********************************* Form Submit Toast End *********************************
+        
+
+        // ********************************* Delete Item Js start *********************************
+        let deleteButtons = document.querySelectorAll('.delete-button');
+
+        deleteButtons.forEach(deleteButton => {
+            deleteButton.addEventListener('click', function () {
+                this.closest('.delete-item').classList.add('d-none');
+                toastMessage("danger", "Deleted", "You deleted successfully!", 'ph-bold ph-trash');
+            });
+        });
+        // ********************************* Delete Item Js End *********************************
+        
+    </script>
+
+</body>
+</html>
