@@ -43,6 +43,16 @@
                             <input type="email" class="form-control py-2" id="email" placeholder="Enter email" required>
                         </div>
                         <div class="mb-3">
+                            <label for="category" class="form-label fw-medium">Select Category</label>
+                            <select class="form-select py-2" id="category" required>
+                                <option value="" hidden selected>Select a category</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Support Request</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label for="message" class="form-label fw-medium">Message</label>
                             <textarea class="form-control py-2" id="message" placeholder="Enter message" rows="3" required></textarea>
                         </div>
@@ -118,6 +128,7 @@
         let formSubmit = document.querySelector('.form-submit');
         let fields = document.querySelectorAll('input');
         let textarea = document.querySelector('textarea');
+        let select = document.querySelector('select');
         let submitBtn = formSubmit.querySelector('#submitBtn');
 
 
@@ -131,15 +142,21 @@
                 if(textarea) {
                     textarea.value = "";
                 }
+                if(select) {
+                    select.value = select.options[0].value;
+                }
                 submitBtn.innerHTML = "Submitting...";
+                submitBtn.disabled = true;
                 setTimeout(() => {
                     submitBtn.innerHTML = "Submit";
+                    submitBtn.disabled = false;
                 }, 500);
                 toastMessage("success", "Success", "Form submitted successfully!", 'ph-fill ph-check-circle');
             });
         }
         // ********************************* Form Submit Toast End *********************************
         
+
 
         // ********************************* Delete Item Js start *********************************
         let deleteButtons = document.querySelectorAll('.delete-button');
