@@ -8,24 +8,26 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/toast.css" rel="stylesheet">
 </head>
-<body class="body p-5">
+<body class="body py-5">
     
     <!-- Custom Toast Message start -->
     <div id="toast-container"></div>
     <!-- Custom Toast Message End -->
 
     <div class="container">
-        <h5 class="mb-3 fw-bold">Welcome to custom Toast message! Created by HTML, CSS & JS</h5>
-        <p class="mb-3 text-slate-600">This toast message is created by <span class="fw-bold text-slate-900">Front-End Developer Md. Robiul Hasan. </span> <br> You can use this in your HTML, React.js, Next.js, Wordpress, Laravel and any other project. </p>
-        
-        <!-- =========================== Custom Toast Message Start ================================ -->
-        <div class="d-flex align-items-center gap-4 flex-wrap mt-5">
-            <button type="button" class="btn btn-success active-scale-098 px-4">Success Alert</button>
-            <button type="button" class="btn btn-warning active-scale-098 px-4">Warning Alert</button>
-            <button type="button" class="btn btn-danger active-scale-098 px-4">Danger Alert</button>
-            <button type="button" class="btn btn-info active-scale-098 px-4">Info Alert</button>
+        <div class="text-center">
+            <h5 class="mb-3 fw-bold">Welcome to custom Toast message! Created by HTML, CSS & JS</h5>
+            <p class="mb-3 text-slate-600">This toast message is created by <span class="fw-bold text-slate-900">Front-End Developer Md. Robiul Hasan. </span> <br> You can use this in your HTML any other project. </p>
+            
+            <!-- =========================== Custom Toast Message Start ================================ -->
+            <div class="d-inline-flex align-items-center gap-3 flex-wrap mt-5">
+                <button type="button" class="flex-grow-1 btn btn-success active-scale-098 px-4">Success Alert</button>
+                <button type="button" class="flex-grow-1 btn btn-warning active-scale-098 px-4">Warning Alert</button>
+                <button type="button" class="flex-grow-1 btn btn-danger active-scale-098 px-4">Danger Alert</button>
+                <button type="button" class="flex-grow-1 btn btn-info active-scale-098 px-4">Info Alert</button>
+            </div>
+            <!-- =========================== Custom Toast Message End ================================ -->
         </div>
-        <!-- =========================== Custom Toast Message End ================================ -->
 
         <div class="mt-5">
             <div class="row gy-4">
@@ -59,6 +61,7 @@
                         <button type="submit" class="btn btn-primary active-scale-098 px-3 w-100 py-2" id="submitBtn">Submit</button>
                     </form>
                 </div>
+
                 <div class="col-md-6">
                     <div class="d-flex flex-column gap-3 ps-xxl-4">
                         <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
@@ -85,6 +88,14 @@
                             <span class="fw-bold">Todo Six</span>
                             <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
                         </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Seven</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
+                        <div class="delete-item d-flex align-items-center justify-content-between gap-2 bg-success bg-opacity-10 py-2 px-3 rounded border">
+                            <span class="fw-bold">Todo Eight</span>
+                            <button type="submit" class="btn btn-danger active-scale-098 px-3 delete-button">Delete</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,7 +105,6 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <script src="js/slider.js"></script>
 
 
     <script type="module">
